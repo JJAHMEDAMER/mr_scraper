@@ -55,16 +55,10 @@ x.wait_for_element('/html/body/div[6]/div[2]/div[1]')
 
 x.find('/html/body/div[6]/div[2]/div[1]')
 
-
-
 for z in range(1,4):
     for i in range(1,212):
         text = x.text(f'/html/body/div[2]/div[1]/table/tbody/tr[{i}]/td[{z}]/a')
         list.append(text)
 
-print(list)
-df = pd.DataFrame(list)
-print(df)
-
-df.to_csv("text.csv", index=False)
+df = pd.DataFrame(list).to_csv("text.csv", index=False)
 driver.quit()
